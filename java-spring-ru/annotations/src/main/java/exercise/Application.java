@@ -12,10 +12,9 @@ public class Application {
         // Итерируем все методы класса
         for (Method method : Address.class.getDeclaredMethods()) {
 
-            // Проверяем, есть ли у метода аннотация @LogExecutionTime
             if (method.isAnnotationPresent(Inspect.class)) {
 
-                System.out.println("Method "+ method.getName() + " returns a value of type "+method.getReturnType()+".");
+                System.out.println("Method "+ method.getName() + " returns a value of type "+method.getReturnType().getSimpleName()+".");
             }
         }
     }
